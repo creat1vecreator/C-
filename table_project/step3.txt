@@ -1,0 +1,27 @@
+struct Table {
+    bool isOccupied; // Is the table occupied: if occupied - true, if free - false
+    double price;  //Price in roubles
+    const char *material; // What material is the table made of
+    const char *colour; // colour
+    int numberOfBoxes; // Quantity of boxes
+    int complement; //active component mark
+    union {
+        bool addOn; //mark = 0
+        bool stand; //mark = 1
+        bool screen; // mark = 2
+    };
+};
+/* Initialization of a table */
+void init(Table *table,
+          bool isOccupied = true,
+          double price = 1499.99,
+          const char *material = "black",
+          const char *colour = "black",
+          int numberOfBoxes = 4,
+          int complement = 0);
+
+/* Visualization of a table */
+void view(Table *table);
+/* keep something */
+void keepThings(Table *table);
+
